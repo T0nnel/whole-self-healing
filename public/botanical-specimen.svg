@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Organic botanical gradients -->
+    <linearGradient id="stemGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#2d3829" />
+      <stop offset="40%" stop-color="#3c4e37" />
+      <stop offset="70%" stop-color="#4a6344" />
+      <stop offset="100%" stop-color="#5c7a54" />
+    </linearGradient>
+
+    <linearGradient id="leafDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#364932" />
+      <stop offset="50%" stop-color="#2c3c28" />
+      <stop offset="100%" stop-color="#1f2c1c" />
+    </linearGradient>
+
+    <linearGradient id="leafMid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e6946" />
+      <stop offset="40%" stop-color="#3d5437" />
+      <stop offset="100%" stop-color="#2b3b27" />
+    </linearGradient>
+
+    <linearGradient id="leafVibrant" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#648858" />
+      <stop offset="40%" stop-color="#4f6d45" />
+      <stop offset="80%" stop-color="#3b5234" />
+      <stop offset="100%" stop-color="#2a3a25" />
+    </linearGradient>
+
+    <linearGradient id="veinHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#90b882" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4e6946" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <g id="specimen" transform="translate(10, 0)">
+    <!-- Main stem -->
+    <path d="M 460 1000 C 455 850, 440 680, 410 490 C 390 360, 360 210, 330 20" 
+          fill="none" stroke="url(#stemGrad)" stroke-width="14" stroke-linecap="round" />
+    <path d="M 462 1000 C 457 850, 442 680, 412 490 C 392 360, 362 210, 332 20" 
+          fill="none" stroke="#253122" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+
+    <!-- Lateral branch 1 (bottom right) -->
+    <path d="M 445 740 C 490 710, 560 690, 640 700" fill="none" stroke="url(#stemGrad)" stroke-width="7" stroke-linecap="round" />
+    
+    <!-- Large leaf 1 (bottom right) -->
+    <g transform="translate(490, 640) rotate(18)">
+      <path d="M 0 60 C 40 -10, 110 -40, 180 -10 C 240 20, 270 90, 240 140 C 200 200, 100 220, 30 160 Z" 
+            fill="url(#leafDeep)" />
+      <!-- Serrations -->
+      <path d="M 0 60 Q 20 40 35 48 Q 50 30 70 38 Q 90 20 115 32 Q 140 15 165 30 Q 190 20 220 50 Q 245 80 235 110 Q 220 140 190 165 Q 160 185 130 195 Q 90 205 60 190 Q 30 175 0 60" 
+            fill="url(#leafMid)" opacity="0.9" />
+      <path d="M 5 62 Q 100 85 220 75" fill="none" stroke="url(#veinHighlight)" stroke-width="3" stroke-linecap="round" />
+      <path d="M 60 70 Q 80 40 110 35" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 100 75 Q 125 45 155 35" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 140 76 Q 165 55 195 50" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 80 73 Q 100 115 130 135" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 120 76 Q 145 115 175 130" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+    </g>
+
+    <!-- Lateral branch 2 (mid left) -->
+    <path d="M 425 610 C 370 560, 290 540, 190 565" fill="none" stroke="url(#stemGrad)" stroke-width="8" stroke-linecap="round" />
+    
+    <!-- Large leaf 2 (mid left) -->
+    <g transform="translate(140, 450) rotate(-22)">
+      <path d="M 230 110 C 190 30, 110 0, 40 30 C -20 60, -30 140, 10 190 C 60 250, 160 250, 230 110 Z" 
+            fill="url(#leafDeep)" />
+      <path d="M 230 110 Q 200 70 185 75 Q 160 50 140 58 Q 110 35 90 45 Q 60 30 35 50 Q 5 70 -5 105 Q -10 145 15 175 Q 45 205 85 215 Q 130 220 170 195 Q 205 165 230 110" 
+            fill="url(#leafVibrant)" />
+      <path d="M 225 110 Q 110 115 10 110" fill="none" stroke="url(#veinHighlight)" stroke-width="3" stroke-linecap="round" />
+      <path d="M 170 112 Q 145 75 115 65" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 130 113 Q 105 75 75 68" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 90 113 Q 65 80 40 80" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 150 112 Q 130 155 100 175" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 110 112 Q 85 150 55 165" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+    </g>
+
+    <!-- Lateral branch 3 (center right) -->
+    <path d="M 405 440 C 470 410, 560 410, 650 440" fill="none" stroke="url(#stemGrad)" stroke-width="7" stroke-linecap="round" />
+
+    <!-- Leaf 3 (center right) -->
+    <g transform="translate(480, 340) rotate(10)">
+      <path d="M 0 80 Q 40 40 80 45 Q 110 20 140 32 Q 170 15 205 35 Q 235 60 230 100 Q 215 135 180 155 Q 140 175 100 175 Q 50 170 0 80" 
+            fill="url(#leafVibrant)" />
+      <path d="M 0 80 Q 110 95 220 90" fill="none" stroke="url(#veinHighlight)" stroke-width="3" stroke-linecap="round" />
+      <path d="M 70 85 Q 95 55 125 45" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 120 88 Q 145 60 175 52" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 90 87 Q 110 125 140 140" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+      <path d="M 140 89 Q 160 120 185 130" fill="none" stroke="url(#veinHighlight)" stroke-width="1.5" />
+    </g>
+
+    <!-- Lateral branch 4 (upper left) -->
+    <path d="M 370 310 C 310 270, 240 260, 160 280" fill="none" stroke="url(#stemGrad)" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Leaf 4 (upper left) -->
+    <g transform="translate(130, 210) rotate(-16)">
+      <path d="M 190 85 Q 160 45 135 50 Q 110 30 85 40 Q 60 25 35 45 Q 5 65 0 95 Q 5 130 35 150 Q 75 170 120 165 Q 160 145 190 85" 
+            fill="url(#leafMid)" />
+      <path d="M 190 85 Q 90 95 5 95" fill="none" stroke="url(#veinHighlight)" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 130 89 Q 105 55 80 50" fill="none" stroke="url(#veinHighlight)" stroke-width="1.3" />
+      <path d="M 90 91 Q 65 60 45 58" fill="none" stroke="url(#veinHighlight)" stroke-width="1.3" />
+      <path d="M 110 90 Q 90 125 65 140" fill="none" stroke="url(#veinHighlight)" stroke-width="1.3" />
+    </g>
+
+    <!-- Top apical leaves (crossing top edge) -->
+    <g transform="translate(310, 10) rotate(-5)">
+      <path d="M 20 140 Q 40 80 80 70 Q 110 30 140 40 Q 170 10 190 0 Q 190 40 170 80 Q 150 130 110 160 Q 60 170 20 140" 
+            fill="url(#leafVibrant)" />
+      <path d="M 20 140 Q 100 95 185 10" fill="none" stroke="url(#veinHighlight)" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+    <g transform="translate(260, 40) rotate(-35)">
+      <path d="M 120 100 Q 95 50 70 55 Q 45 25 20 35 Q 0 60 5 90 Q 25 125 65 135 Q 95 125 120 100" 
+            fill="url(#leafDeep)" />
+      <path d="M 120 100 Q 60 85 5 70" fill="none" stroke="url(#veinHighlight)" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- Herbarium botanical mounting stamp / notation -->
+    <g transform="translate(560, 910)" opacity="0.65">
+      <rect x="0" y="0" width="180" height="54" fill="#edddc3" stroke="#1e211e" stroke-width="1" rx="0" />
+      <text x="12" y="20" font-family="'PP Neue Montreal', sans-serif, system-ui" font-size="10" font-weight="500" fill="#1e211e" letter-spacing="1">HERBARIUM SPECIMEN</text>
+      <text x="12" y="36" font-family="'PP Neue Montreal', sans-serif, system-ui" font-size="11" font-weight="400" font-style="italic" fill="#1e211e">Salvia &amp; Urtica — 01</text>
+    </g>
+  </g>
+</svg>
