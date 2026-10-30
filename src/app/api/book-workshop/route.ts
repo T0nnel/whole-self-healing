@@ -28,10 +28,12 @@ export async function POST(request: Request) {
     if (apiKey) {
       const resend = new Resend(apiKey);
       const fromEmail = process.env.FROM_EMAIL || "Whole Self Healing <onboarding@resend.dev>";
-      const notifyAdminEmail = process.env.NOTIFY_EMAIL || "info@wholeselfhealing.co.uk";
+      const notifyAdminEmail = process.env.NOTIFY_EMAIL || "mbuguatonnel@gmail.com";
 
-      // 1. Send confirmation with Zoom & workshop details to attendee
-      await resend.emails.send({
+      // 1. Send confirmation to attendee (best-effort — won't block the response)
+      // Note: without a verified sending domain, only delivers to the account owner.
+      // Verify wholeselfhealing.co.uk in Resend to enable delivery to all attendees.
+      resend.emails.send({
         from: fromEmail,
         to: email,
         subject: `Your Workshop Spot is Confirmed (${bookingRef}) — Whole Self Healing`,
@@ -57,9 +59,9 @@ export async function POST(request: Request) {
             </p>
           </div>
         `,
-      });
+      }).catch((e) => console.warn("User confirmation note:", e));
 
-      // 2. Notify Bibi/Admin of the new workshop attendee
+      // 2. Notify admin of new workshop attendee (awaited — this is the critical one)
       await resend.emails.send({
         from: fromEmail,
         to: notifyAdminEmail,

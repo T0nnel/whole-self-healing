@@ -30,10 +30,13 @@ export async function POST(request: Request) {
     if (apiKey) {
       const resend = new Resend(apiKey);
       const fromEmail = process.env.FROM_EMAIL || "Whole Self Healing <onboarding@resend.dev>";
-      const notifyAdminEmail = process.env.NOTIFY_EMAIL || "info@wholeselfhealing.co.uk";
+      const notifyAdminEmail = process.env.NOTIFY_EMAIL || "mbuguatonnel@gmail.com";
 
-      // 1. Send confirmation email to the user
-      await resend.emails.send({
+      // 1. Send confirmation email to the user (best-effort — won't fail the request)
+      // Note: without a verified sending domain in Resend, this only delivers to the
+      // account owner's address. Once wholeselfhealing.co.uk is verified, this works
+      // for every submitter automatically.
+      resend.emails.send({
         from: fromEmail,
         to: email,
         subject: "Thank you for registering your interest — Whole Self Healing",
@@ -58,9 +61,9 @@ export async function POST(request: Request) {
             </p>
           </div>
         `,
-      });
+      }).catch((e) => console.warn("User confirmation note:", e));
 
-      // 2. Notify Bibi/Admin about the new registrant
+      // 2. Notify admin about the new registrant (awaited — this is the critical one)
       await resend.emails.send({
         from: fromEmail,
         to: notifyAdminEmail,
