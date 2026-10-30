@@ -20,7 +20,7 @@ export default function Footer() {
                 ✳
               </div>
               <span className="brand-text text-xl">
-                whole self <span>healing</span>
+                Whole Self Healing
               </span>
             </div>
             <p className="text-sm text-[var(--color-charcoal)] leading-relaxed max-w-sm mb-4">

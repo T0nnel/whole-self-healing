@@ -261,19 +261,12 @@ textarea:focus-visible {
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 4px;
 }
 
 @media (max-width: 480px) {
   .brand-text {
     font-size: 17px;
   }
-}
-
-.brand-text span {
-  font-style: italic;
-  font-weight: var(--font-weight-light);
-  color: var(--color-terracotta-seal);
 }
 
 .desktop-nav-menu {

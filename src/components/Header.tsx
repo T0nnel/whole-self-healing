@@ -42,7 +42,7 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
               ✳
             </div>
             <div className="brand-text">
-              Whole Self <span>Healing</span>
+              Whole Self Healing
             </div>
           </Link>
 
@@ -120,7 +120,7 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
                 <div className="nav-brand-group">
                   <div className="brand-seal-icon">✳</div>
                   <div className="brand-text">
-                    Whole Self <span>Healing</span>
+                    Whole Self Healing
                   </div>
                 </div>
                 <button
