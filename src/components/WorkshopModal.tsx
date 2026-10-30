@@ -24,6 +24,7 @@ export default function WorkshopModal({ isOpen, onClose, preselectedDate }: Work
   const [bookingResult, setBookingResult] = useState<{
     bookingRef: string;
     sessionDate: string;
+    zoomUrl?: string;
     message: string;
   } | null>(null);
 
@@ -218,6 +219,19 @@ export default function WorkshopModal({ isOpen, onClose, preselectedDate }: Work
                 <span className="text-[var(--color-graphite)]">Reference:</span>
                 <span className="font-mono text-terracotta">{bookingResult.bookingRef}</span>
               </div>
+              {bookingResult.zoomUrl && (
+                <div className="flex justify-between items-center pt-2 border-t border-[var(--color-warm-taupe)]">
+                  <span className="text-[var(--color-graphite)]">Zoom Room:</span>
+                  <a
+                    href={bookingResult.zoomUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--color-terracotta-seal)] font-semibold underline text-xs"
+                  >
+                    Open Meeting Link ↗
+                  </a>
+                </div>
+              )}
             </div>
 
             <p className="text-sm text-[var(--color-charcoal)] leading-relaxed mb-6">

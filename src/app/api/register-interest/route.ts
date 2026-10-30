@@ -47,13 +47,12 @@ export async function POST(request: Request) {
             <p style="font-size: 16px; line-height: 1.6; color: #333333; margin: 0 0 16px 0;">
               Thank you for registering your interest in 1:1 coaching. I have received your enquiry and will be in touch personally as private openings become available.
             </p>
-            ${
-              focusArea
-                ? `<div style="background: #f5eee1; padding: 14px 18px; border-radius: 8px; margin: 20px 0; font-size: 14px; border: 1px solid #d1c9bf;">
+            ${focusArea
+            ? `<div style="background: #f5eee1; padding: 14px 18px; border-radius: 8px; margin: 20px 0; font-size: 14px; border: 1px solid #d1c9bf;">
                     <strong>Focus Area:</strong> ${focusArea}
                   </div>`
-                : ""
-            }
+            : ""
+          }
             <p style="font-size: 14px; line-height: 1.6; color: #515151; margin: 24px 0 0 0;">
               Warmly,<br />
               <strong>Bibi Beck</strong><br />
