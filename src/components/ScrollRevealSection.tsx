@@ -46,21 +46,16 @@ export default function ScrollRevealSection({
     return () => observer.disconnect();
   }, []);
 
-  // Pronounced entrance offsets (80px - 100px) so the movement is clear and noticeable
-  let hiddenTransform = "translate3d(0, 70px, 0)";
-  if (direction === "left") {
-    hiddenTransform = "translate3d(-90px, 0, 0)";
-  } else if (direction === "right") {
-    hiddenTransform = "translate3d(90px, 0, 0)";
-  }
+  // Gentle vertical reveal: avoids horizontal off-screen translate which causes layout overflow
+  const hiddenTransform = "translate3d(0, 36px, 0)";
 
   return (
     <section
       ref={ref}
       id={id}
-      className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[transform,opacity] ${className}`}
+      className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[transform,opacity] ${className}`}
       style={{
-        opacity: isVisible ? 1 : 0,
+        opacity: isVisible ? 1 : 0.05,
         transform: isVisible ? "translate3d(0, 0, 0)" : hiddenTransform,
       }}
     >
