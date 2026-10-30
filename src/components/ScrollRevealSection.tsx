@@ -31,14 +31,13 @@ export default function ScrollRevealSection({
     const element = ref.current;
     if (!element) return;
 
-    // Observe when element enters and exits viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.10,
-        rootMargin: "-40px 0px -40px 0px",
+        threshold: 0.08,
+        rootMargin: "-20px 0px -20px 0px",
       }
     );
 
@@ -46,20 +45,30 @@ export default function ScrollRevealSection({
     return () => observer.disconnect();
   }, []);
 
-  // Gentle vertical reveal: avoids horizontal off-screen translate which causes layout overflow
-  const hiddenTransform = "translate3d(0, 36px, 0)";
+  // Directional entrance: slide from left/right/up
+  // The outer wrapper clips overflow so horizontal slides don't cause page overflow
+  const SLIDE_DISTANCE = "64px";
+  const hiddenTransform =
+    direction === "left"
+      ? `translate3d(-${SLIDE_DISTANCE}, 0, 0)`
+      : direction === "right"
+      ? `translate3d(${SLIDE_DISTANCE}, 0, 0)`
+      : "translate3d(0, 40px, 0)";
 
   return (
-    <section
-      ref={ref}
-      id={id}
-      className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[transform,opacity] ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0.05,
-        transform: isVisible ? "translate3d(0, 0, 0)" : hiddenTransform,
-      }}
-    >
-      {children}
-    </section>
+    /* clip-overflow wrapper: keeps horizontal slides contained within each section */
+    <div style={{ overflowX: "clip" }}>
+      <section
+        ref={ref}
+        id={id}
+        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[transform,opacity] ${className}`}
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translate3d(0, 0, 0)" : hiddenTransform,
+        }}
+      >
+        {children}
+      </section>
+    </div>
   );
 }
