@@ -24,7 +24,6 @@ export default function WorkshopModal({ isOpen, onClose, preselectedDate }: Work
   const [bookingResult, setBookingResult] = useState<{
     bookingRef: string;
     sessionDate: string;
-    zoomUrl?: string;
     message: string;
   } | null>(null);
 
@@ -154,7 +153,7 @@ export default function WorkshopModal({ isOpen, onClose, preselectedDate }: Work
 
               <div>
                 <label htmlFor="modal-email" className="text-xs font-semibold uppercase tracking-wider text-[var(--color-charcoal)] mb-2 block">
-                  Email Address (for Zoom Link)
+                  Email Address (for Workshop Link)
                 </label>
                 <input
                   id="modal-email"
@@ -192,7 +191,7 @@ export default function WorkshopModal({ isOpen, onClose, preselectedDate }: Work
                   {isSubmitting ? "Securing your spot..." : "Confirm reservation ↗"}
                 </button>
                 <p className="text-xs text-[var(--color-graphite)] text-center font-mono">
-                  ✦ Small group size • Online Zoom access • Free attendance
+                  ✦ Small group size • Online live access • Free attendance
                 </p>
               </div>
             </form>
@@ -219,19 +218,6 @@ export default function WorkshopModal({ isOpen, onClose, preselectedDate }: Work
                 <span className="text-[var(--color-graphite)]">Reference:</span>
                 <span className="font-mono text-terracotta">{bookingResult.bookingRef}</span>
               </div>
-              {bookingResult.zoomUrl && (
-                <div className="flex justify-between items-center pt-2 border-t border-[var(--color-warm-taupe)]">
-                  <span className="text-[var(--color-graphite)]">Zoom Room:</span>
-                  <a
-                    href={bookingResult.zoomUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--color-terracotta-seal)] font-semibold underline text-xs"
-                  >
-                    Open Meeting Link ↗
-                  </a>
-                </div>
-              )}
             </div>
 
             <p className="text-sm text-[var(--color-charcoal)] leading-relaxed mb-6">

@@ -148,7 +148,7 @@ export default function Home() {
                 <div className="stat-divider" aria-hidden="true" />
                 <div className="stat-item">
                   <span className="stat-metric">60 min</span>
-                  <span className="stat-caption">online, via Zoom</span>
+                  <span className="stat-caption">online cohort</span>
                 </div>
                 <div className="stat-divider" aria-hidden="true" />
                 <div className="stat-item">
@@ -350,7 +350,7 @@ export default function Home() {
                 Start with Self-Compassion
               </h2>
               <p className="text-sm text-[var(--color-terracotta-seal)] mb-4">
-                One-hour online workshop via Zoom
+                One-hour live online workshop
               </p>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mb-6">
                 {workshopCopy}

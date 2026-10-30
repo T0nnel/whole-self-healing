@@ -24,7 +24,6 @@ export async function POST(request: Request) {
     const bookingRef = `WSH-${Math.floor(100000 + Math.random() * 900000)}`;
     const chosenDate = sessionDate || "Next Available Session";
     const apiKey = process.env.RESEND_API_KEY;
-    const zoomUrl = process.env.ZOOM_WORKSHOP_URL || "https://zoom.us/j/wholeselfhealing";
 
     if (apiKey) {
       const resend = new Resend(apiKey);
@@ -32,8 +31,6 @@ export async function POST(request: Request) {
       const notifyAdminEmail = process.env.NOTIFY_EMAIL || "mbuguatonnel@gmail.com";
 
       // 1. Send confirmation to attendee (best-effort — won't block the response)
-      // Note: without a verified sending domain, only delivers to the account owner.
-      // Verify wholeselfhealing.co.uk in Resend to enable delivery to all attendees.
       resend.emails.send({
         from: fromEmail,
         to: email,
@@ -48,17 +45,11 @@ export async function POST(request: Request) {
             <div style="background: #f5eee1; padding: 18px 20px; border-radius: 8px; margin: 24px 0; border: 1px solid #d1c9bf;">
               <p style="margin: 0 0 8px 0; font-size: 14px;"><strong>Booking Reference:</strong> ${bookingRef}</p>
               <p style="margin: 0 0 8px 0; font-size: 14px;"><strong>Session:</strong> ${chosenDate}</p>
-              <p style="margin: 0 0 8px 0; font-size: 14px;"><strong>Format:</strong> 60 minutes online via Zoom</p>
-              <p style="margin: 0; font-size: 14px;"><strong>Zoom Meeting Link:</strong> <a href="${zoomUrl}" style="color: #b87557; text-decoration: underline; font-weight: 600;">Join Workshop on Zoom</a></p>
+              <p style="margin: 0; font-size: 14px;"><strong>Format:</strong> 60 minutes online</p>
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #333333;">
-              Please save your Zoom link above. You will also receive a calendar reminder and preparation materials 24 hours prior to the session.
+              You will receive your private session access link and preparation materials 24 hours prior to the session.
             </p>
-            <div style="margin: 24px 0; text-align: center;">
-              <a href="${zoomUrl}" style="background-color: #b87557; color: #ffffff; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block;">
-                Open Zoom Room →
-              </a>
-            </div>
             <p style="font-size: 14px; line-height: 1.6; color: #515151; margin: 24px 0 0 0;">
               Warmly,<br />
               <strong>Bibi Beck</strong><br />
@@ -68,7 +59,7 @@ export async function POST(request: Request) {
         `,
       }).catch((e) => console.warn("User confirmation note:", e));
 
-      // 2. Notify admin of new workshop attendee (awaited — this is the critical one)
+      // 2. Notify admin of new workshop attendee (awaited — critical)
       await resend.emails.send({
         from: fromEmail,
         to: notifyAdminEmail,
@@ -80,7 +71,6 @@ export async function POST(request: Request) {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Session:</strong> ${chosenDate}</p>
             <p><strong>Booking Ref:</strong> ${bookingRef}</p>
-            <p><strong>Zoom Room:</strong> <a href="${zoomUrl}">${zoomUrl}</a></p>
           </div>
         `,
       }).catch((e) => console.warn("Admin notification note:", e));
@@ -93,8 +83,7 @@ export async function POST(request: Request) {
         success: true,
         bookingRef,
         sessionDate: chosenDate,
-        zoomUrl,
-        message: `Your spot has been reserved for "${chosenDate}". Access details and your Zoom link have been prepared for ${email}.`,
+        message: `Your spot has been reserved for "${chosenDate}". Access details and confirmation have been prepared for ${email}.`,
       },
       { status: 200 }
     );

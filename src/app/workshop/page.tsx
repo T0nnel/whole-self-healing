@@ -52,7 +52,7 @@ export default function WorkshopPage() {
           <div className="step-cards-grid mt-0">
             <div className="numbered-step-card bg-[var(--color-parchment)]">
               <span className="step-num-badge">FORMAT</span>
-              <h3 className="step-card-title">Live Online via Zoom</h3>
+              <h3 className="step-card-title">Live Online Cohort</h3>
               <p className="step-card-body">
                 Small, intimate cohort. You are warmly welcome to keep your camera on or off according to your personal comfort level.
               </p>
