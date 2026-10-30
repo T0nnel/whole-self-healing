@@ -166,7 +166,7 @@ textarea:focus-visible {
 .announcement-bar {
   background: var(--color-terracotta-seal);
   color: var(--color-white);
-  padding: 9px 16px;
+  padding: 8px 16px;
   text-align: center;
   font-size: var(--text-body-sm);
   font-weight: var(--font-weight-regular);
@@ -176,6 +176,23 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .announcement-bar {
+    padding: 6px 12px;
+    font-size: 12px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .announcement-text {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  .announcement-link {
+    font-size: 11px;
+    white-space: nowrap;
+  }
 }
 
 .announcement-pill {
@@ -241,6 +258,16 @@ textarea:focus-visible {
   color: var(--color-ink);
   letter-spacing: -0.01em;
   line-height: 1.1;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 480px) {
+  .brand-text {
+    font-size: 17px;
+  }
 }
 
 .brand-text span {
@@ -728,16 +755,38 @@ textarea:focus-visible {
   }
   .hero-journal-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
-  .step-cards-grid {
-    grid-template-columns: 1fr;
+  .hero-journal-section {
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+  .practitioner-quote-card {
+    padding: 28px 20px;
+    margin-block: 28px;
   }
   .workshop-journal-card {
     grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 20px;
+    margin-block: 28px;
+  }
+  .form-journal-card {
+    padding: 28px 20px;
+  }
+  .step-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
   }
   .footer-inner-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
+  }
+  .site-journal-footer {
+    padding-top: 40px;
+    padding-bottom: 32px;
+    margin-top: 40px;
   }
 }
 

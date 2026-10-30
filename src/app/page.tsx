@@ -205,7 +205,7 @@ export default function Home() {
       <ScrollRevealSection
         id="approach"
         direction="left"
-        className="py-20 bg-[var(--color-parchment)] relative z-10"
+        className="py-12 md:py-20 bg-[var(--color-parchment)] relative z-10"
       >
         <div className="main-wrapper">
           <div className="max-w-2xl mb-6">
@@ -271,7 +271,7 @@ export default function Home() {
       <ScrollRevealSection
         id="about"
         direction="right"
-        className="py-20 bg-[var(--color-aged-paper)]"
+        className="py-12 md:py-20 bg-[var(--color-aged-paper)]"
       >
         <div className="main-wrapper">
           <div className="practitioner-quote-card">
@@ -291,7 +291,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-8 md:mt-12 items-start">
             <div>
               <p className="text-sm text-[var(--color-graphite)] mb-4">About Bibi</p>
               <h2 className="text-3xl font-normal leading-tight">
@@ -340,7 +340,7 @@ export default function Home() {
       <ScrollRevealSection
         id="workshop"
         direction="left"
-        className="py-20 bg-[var(--color-parchment)]"
+        className="py-12 md:py-20 bg-[var(--color-parchment)]"
       >
         <div className="main-wrapper">
           <div className="workshop-journal-card">
@@ -397,7 +397,7 @@ export default function Home() {
       <ScrollRevealSection
         id="coaching"
         direction="right"
-        className="py-20 bg-[var(--color-aged-paper)]"
+        className="py-12 md:py-20 bg-[var(--color-aged-paper)]"
       >
         <div className="main-wrapper">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">

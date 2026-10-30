@@ -15,18 +15,20 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
     <>
       {/* Top Announcement Bar */}
       <div className="announcement-bar">
-        <span className="announcement-pill">UPCOMING WORKSHOP</span>
-        <span>Start with Self-Compassion — Live online cohort booking now</span>
+        <span className="announcement-pill hidden sm:inline-block">UPCOMING WORKSHOP</span>
+        <span className="announcement-text truncate">
+          Start with Self-Compassion — Live online cohort
+        </span>
         {onBookClick ? (
           <button
             type="button"
             onClick={onBookClick}
-            className="announcement-link bg-transparent border-0 text-white cursor-pointer"
+            className="announcement-link bg-transparent border-0 text-white cursor-pointer shrink-0"
           >
             Reserve your place →
           </button>
         ) : (
-          <Link href="/workshop" className="announcement-link">
+          <Link href="/workshop" className="announcement-link shrink-0">
             Reserve your place →
           </Link>
         )}
@@ -40,7 +42,7 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
               ✳
             </div>
             <div className="brand-text">
-              whole self <span>healing</span>
+              Whole Self <span>Healing</span>
             </div>
           </Link>
 
@@ -85,12 +87,23 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-full border border-[var(--color-warm-taupe)] bg-[var(--color-aged-paper)] text-ink cursor-pointer"
+            className="md:hidden w-11 h-11 flex items-center justify-center rounded-full border border-[var(--color-warm-taupe)] bg-[var(--color-aged-paper)] text-ink cursor-pointer hover:bg-[var(--color-parchment)] transition-colors shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? "✕" : "☰"}
+            {mobileMenuOpen ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="7" x2="20" y2="7"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="17" x2="20" y2="17"></line>
+              </svg>
+            )}
           </button>
         </div>
 
@@ -107,7 +120,7 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
                 <div className="nav-brand-group">
                   <div className="brand-seal-icon">✳</div>
                   <div className="brand-text">
-                    whole self <span>healing</span>
+                    Whole Self <span>Healing</span>
                   </div>
                 </div>
                 <button
