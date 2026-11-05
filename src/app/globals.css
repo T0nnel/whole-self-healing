@@ -202,10 +202,12 @@ textarea:focus-visible {
     gap: 8px;
     justify-content: space-between;
   }
+
   .announcement-text {
     font-size: 12px;
     line-height: 1.2;
   }
+
   .announcement-link {
     font-size: 11px;
     white-space: nowrap;
@@ -229,7 +231,45 @@ textarea:focus-visible {
   font-weight: var(--font-weight-semibold);
 }
 
-/* Site Navigation Bar */
+/* Mobile Navigation Drawer */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  top: 72px;
+  background: rgba(26, 30, 25, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+}
+
+.mobile-drawer {
+  background: var(--color-parchment);
+  border-bottom: 1px solid var(--color-warm-taupe);
+  padding: 24px;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-warm-taupe);
+}
+
+.close-drawer-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--color-ink);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
 .site-nav-container {
   position: sticky;
   top: 0;
@@ -394,15 +434,13 @@ textarea:focus-visible {
 
 /* Hero Section */
 .hero-journal-section {
-  padding-top: 56px;
-  padding-bottom: 72px;
+  padding-top: 48px;
+  padding-bottom: 80px;
 }
 
 .hero-journal-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
-  align-items: center;
+  display: block;
+  width: 100%;
 }
 
 .hero-journal-title {
@@ -491,6 +529,7 @@ textarea:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 24px;
+  width: 100%;
   margin-top: 36px;
   margin-bottom: 24px;
   padding: 16px 24px;
@@ -764,36 +803,44 @@ textarea:focus-visible {
   .desktop-nav-menu {
     display: none;
   }
+
   .hero-journal-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    display: block;
+    width: 100%;
   }
+
   .hero-journal-section {
-    padding-top: 28px;
-    padding-bottom: 36px;
+    padding-top: 36px;
+    padding-bottom: 48px;
   }
+
   .practitioner-quote-card {
     padding: 28px 20px;
     margin-block: 28px;
   }
+
   .workshop-journal-card {
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 28px 20px;
     margin-block: 28px;
   }
+
   .form-journal-card {
     padding: 28px 20px;
   }
+
   .step-cards-grid {
     grid-template-columns: 1fr;
     gap: 16px;
     margin-top: 24px;
   }
+
   .footer-inner-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
   .site-journal-footer {
     padding-top: 40px;
     padding-bottom: 32px;
@@ -806,15 +853,39 @@ textarea:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    padding-top: 24px;
   }
+
   .stat-divider {
     display: none;
   }
-  .apothecary-photo-card {
-    padding: 20px 16px;
-  }
+
   .main-wrapper {
     padding-inline: 16px;
+  }
+
+  .tag-flow-container {
+    padding: 16px;
+    gap: 10px 16px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-actions-row .btn-primary-terracotta,
+  .hero-actions-row .btn-secondary-outlined {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-journal-title {
+    font-size: 2.3rem;
   }
 }
 
@@ -827,6 +898,7 @@ textarea:focus-visible {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -834,10 +906,13 @@ textarea:focus-visible {
 }
 
 @keyframes organicBreathe {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.95;
   }
+
   50% {
     transform: scale(1.02);
     opacity: 1;
@@ -849,12 +924,15 @@ textarea:focus-visible {
     transform: translate(0, 0) scale(0.8);
     opacity: 0;
   }
+
   20% {
     opacity: 0.7;
   }
+
   80% {
     opacity: 0.6;
   }
+
   100% {
     transform: translate(var(--drift-x, 15px), var(--drift-y, -35px)) scale(1.1);
     opacity: 0;
@@ -933,6 +1011,7 @@ textarea:focus-visible {
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
   .hero-stagger-1,
   .hero-stagger-2,
   .hero-stagger-3,
@@ -944,4 +1023,3 @@ textarea:focus-visible {
     opacity: 1 !important;
   }
 }
-

@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WorkshopModal from "@/components/WorkshopModal";
-import ParticleCanvas, { ParticleSectionState } from "@/components/ParticleCanvas";
 import BotanicalScrollTrack from "@/components/BotanicalScrollTrack";
 import ScrollRevealSection from "@/components/ScrollRevealSection";
 import Link from "next/link";
@@ -15,47 +14,12 @@ const workshopCopy =
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [currentSection, setCurrentSection] = useState<ParticleSectionState>("hero");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formMsg, setFormMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
-
-  // Track active section to trigger organic particle shifts
-  useEffect(() => {
-    const sectionIds: { id: string; state: ParticleSectionState }[] = [
-      { id: "home", state: "hero" },
-      { id: "approach", state: "approach" },
-      { id: "about", state: "about" },
-      { id: "workshop", state: "workshop" },
-      { id: "coaching", state: "coaching" },
-    ];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const match = sectionIds.find((s) => s.id === entry.target.id);
-            if (match) {
-              setCurrentSection(match.state);
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.25,
-      }
-    );
-
-    sectionIds.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -97,9 +61,6 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden relative">
-      {/* Signature Canvas Particle Engine (Fixed, smooth, low GPU load, paused when off-screen) */}
-      <ParticleCanvas currentSection={currentSection} page="home" />
-
       <Header onBookClick={() => setModalOpen(true)} />
 
       {/* Hero Section — Warm Apothecary Journal on Parchment */}
@@ -154,30 +115,6 @@ export default function Home() {
                 <div className="stat-item">
                   <span className="stat-metric">1:1</span>
                   <span className="stat-caption">coaching coming soon</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Apothecary Herbarium Card with subtle living rhythm */}
-            <div className="flex flex-col items-center">
-              <div
-                className="apothecary-photo-card breath-rhythm relative"
-                aria-label="Apothecary botanical specimen"
-              >
-                <span className="apothecary-specimen-badge">NO. 01 / SPECIMEN</span>
-                <div className="relative w-full aspect-[4/5] flex items-center justify-center">
-                  <Image
-                    src="/botanical-specimen.svg"
-                    alt="Pressed botanical specimen on warm parchment"
-                    width={420}
-                    height={520}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
-                </div>
-                <div className="mt-4 pt-4 border-t border-[var(--color-warm-taupe)] flex justify-between items-center text-xs text-[var(--color-graphite)] font-mono">
-                  <span>WHOLE SELF HEALING</span>
-                  <span>BIBI BECK, MSc, PGDIP PWP</span>
                 </div>
               </div>
             </div>
