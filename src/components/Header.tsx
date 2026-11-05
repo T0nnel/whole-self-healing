@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Header({ onBookClick }: { onBookClick?: () => void }) {
@@ -38,8 +39,15 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
       <header className="site-nav-container">
         <div className="site-nav-inner">
           <Link href="/" className="nav-brand-group" onClick={closeMenu} aria-label="Whole Self Healing home">
-            <div className="brand-seal-icon" aria-hidden="true">
-              ✳
+            <div className="relative w-8 h-8 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] flex items-center justify-center shrink-0">
+              <Image
+                src="/logo.jpg"
+                alt="Whole Self Healing logo motif"
+                width={32}
+                height={32}
+                className="object-cover w-full h-full"
+                priority
+              />
             </div>
             <div className="brand-text">
               Whole Self Healing

@@ -147,7 +147,7 @@ async function testWorkshopBooking() {
         </p>
         <div style="background:#f5eee1;padding:18px 20px;border-radius:8px;margin:24px 0;border:1px solid #d1c9bf;">
           <p style="margin:0 0 8px;font-size:14px;"><strong>Booking Reference:</strong> ${bookingRef}</p>
-          <p style="margin:0 0 8px;font-size:14px;"><strong>Session:</strong> Saturday 15 November 2026, 10:00 AM GMT</p>
+          <p style="margin:0 0 8px;font-size:14px;"><strong>Session:</strong> Saturday, 12 December 2026 • 10:00–11:00 GMT</p>
           <p style="margin:0;font-size:14px;"><strong>Format:</strong> 60 minutes online via Zoom</p>
         </div>
         <p style="font-size:15px;line-height:1.6;">

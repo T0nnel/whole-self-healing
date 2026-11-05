@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Colors — Warm Apothecary Journal (Parchment & Terracotta with Whole Self Healing tones) */
-  --color-terracotta-seal: #b87557;
-  --gradient-terracotta-seal: linear-gradient(116deg, rgb(184, 117, 87), rgb(218, 168, 145));
+  /* Colors — Warm Apothecary Journal (Parchment & Dusty Rose / Pink with Whole Self Healing tones) */
+  --color-dusty-pink: #c27d7f;
+  --color-dusty-pink-hover: #b16a6c;
+  --color-dusty-pink-deep: #9d5457;
+  --color-dusty-pink-subtle: #f8ecec;
+  --color-terracotta-seal: var(--color-dusty-pink);
+  --gradient-terracotta-seal: linear-gradient(116deg, #c27d7f, #dfabaa);
   --color-parchment: #f7f4ed;
   --color-aged-paper: #eee9df;
   --color-sage: #dce5d7;
@@ -76,7 +80,7 @@
   /* Elevation Shadows */
   --shadow-lg: rgba(0, 0, 0, 0.08) 0px 4px 20px 0px;
   --shadow-xl: rgba(52, 61, 50, 0.08) 12px 32px 80px 0px;
-  --shadow-glow: 0 0 0 3px rgba(184, 117, 87, 0.22);
+  --shadow-glow: 0 0 0 3px rgba(194, 125, 127, 0.25);
 
   /* Layout */
   --page-max-width: 1280px;
@@ -262,7 +266,7 @@ textarea:focus-visible {
   justify-content: center;
   color: var(--color-white);
   font-size: 14px;
-  box-shadow: 0 2px 8px rgba(184, 117, 87, 0.25);
+  box-shadow: 0 2px 8px rgba(194, 125, 127, 0.28);
 }
 
 .brand-text {
@@ -308,7 +312,7 @@ textarea:focus-visible {
 
 /* Button Component Styles */
 .btn-primary-terracotta {
-  background-color: var(--color-terracotta-seal);
+  background-color: var(--color-dusty-pink);
   color: var(--color-white);
   font-size: var(--text-body);
   font-weight: var(--font-weight-semibold);
@@ -320,24 +324,24 @@ textarea:focus-visible {
   gap: 10px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(184, 117, 87, 0.2);
+  box-shadow: 0 4px 14px rgba(194, 125, 127, 0.22);
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .btn-primary-terracotta:hover {
   transform: translateY(-1px);
-  background-color: #a44f2d;
-  box-shadow: 0 6px 20px rgba(184, 117, 87, 0.28);
+  background-color: var(--color-dusty-pink-hover);
+  box-shadow: 0 6px 20px rgba(194, 125, 127, 0.3);
 }
 
 .btn-secondary-outlined {
   background-color: transparent;
-  color: var(--color-terracotta-seal);
+  color: var(--color-dusty-pink-deep);
   font-size: var(--text-body);
   font-weight: var(--font-weight-semibold);
   padding: 11px 24px;
   border-radius: var(--radius-buttons);
-  border: 1.5px solid var(--color-terracotta-seal);
+  border: 1.5px solid var(--color-dusty-pink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -347,7 +351,8 @@ textarea:focus-visible {
 }
 
 .btn-secondary-outlined:hover {
-  background-color: var(--color-aged-paper);
+  background-color: var(--color-dusty-pink-subtle);
+  color: var(--color-dusty-pink-hover);
 }
 
 .btn-pill-sm {
@@ -678,8 +683,8 @@ textarea:focus-visible {
 }
 
 .calendar-pill-row.selected {
-  border-color: var(--color-terracotta-seal);
-  background: #fdf3ec;
+  border-color: var(--color-dusty-pink);
+  background: var(--color-dusty-pink-subtle);
   font-weight: var(--font-weight-semibold);
 }
 

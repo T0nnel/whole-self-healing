@@ -91,7 +91,7 @@ export default function WorkshopPage() {
 
             <div className="flex flex-col gap-6">
               <div className="bg-[var(--color-aged-paper)] p-6 rounded-2xl border border-[var(--color-warm-taupe)]">
-                <span className="text-xs font-mono font-semibold text-[var(--color-terracotta-seal)] block mb-1">
+                <span className="text-xs font-mono font-semibold text-[var(--color-dusty-pink)] block mb-1">
                   PART 01 • 15 MINS
                 </span>
                 <h4 className="text-xl font-normal text-ink mb-2">Unmasking the Inner Critic</h4>
@@ -101,8 +101,8 @@ export default function WorkshopPage() {
               </div>
 
               <div className="bg-[var(--color-aged-paper)] p-6 rounded-2xl border border-[var(--color-warm-taupe)]">
-                <span className="text-xs font-mono font-semibold text-[var(--color-terracotta-seal)] block mb-1">
-                  PART 02 • 20 MINS
+                <span className="text-xs font-mono font-semibold text-[var(--color-dusty-pink)] block mb-1">
+                  PART 02 • 10 MINS
                 </span>
                 <h4 className="text-xl font-normal text-ink mb-2">Somatic Nervous System Soothing</h4>
                 <p className="text-sm text-[var(--color-charcoal)] leading-relaxed m-0">
@@ -111,17 +111,17 @@ export default function WorkshopPage() {
               </div>
 
               <div className="bg-[var(--color-aged-paper)] p-6 rounded-2xl border border-[var(--color-warm-taupe)]">
-                <span className="text-xs font-mono font-semibold text-[var(--color-terracotta-seal)] block mb-1">
-                  PART 03 • 15 MINS
+                <span className="text-xs font-mono font-semibold text-[var(--color-dusty-pink)] block mb-1">
+                  PART 03 • 25 MINS
                 </span>
-                <h4 className="text-xl font-normal text-ink mb-2">Compassionate Self-Talk</h4>
+                <h4 className="text-xl font-normal text-ink mb-2">Compassionate Talk</h4>
                 <p className="text-sm text-[var(--color-charcoal)] leading-relaxed m-0">
                   Concrete mental shifts to replace self-blame with genuine encouragement when energy dips.
                 </p>
               </div>
 
               <div className="bg-[var(--color-aged-paper)] p-6 rounded-2xl border border-[var(--color-warm-taupe)]">
-                <span className="text-xs font-mono font-semibold text-[var(--color-terracotta-seal)] block mb-1">
+                <span className="text-xs font-mono font-semibold text-[var(--color-dusty-pink)] block mb-1">
                   PART 04 • 10 MINS
                 </span>
                 <h4 className="text-xl font-normal text-ink mb-2">Guided Reflection &amp; Integration</h4>
@@ -148,30 +148,30 @@ export default function WorkshopPage() {
                 <span className="announcement-pill text-ink bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)]">
                   WEEKEND SESSION
                 </span>
-                <h3 className="text-xl font-normal mt-4 mb-2">Saturday, Nov 14, 2026</h3>
+                <h3 className="text-xl font-normal mt-4 mb-2">Saturday, 12 December 2026</h3>
                 <p className="text-xs text-[var(--color-graphite)] font-mono">10:00 – 11:00 GMT (ONLINE)</p>
               </div>
               <button
                 type="button"
                 className="btn-primary-terracotta btn-pill-sm w-full justify-center"
-                onClick={() => openWithSlot("Saturday, Nov 14 • 10:00 – 11:00 GMT")}
+                onClick={() => openWithSlot("Saturday, 12 December 2026 • 10:00–11:00 GMT")}
               >
                 Book this slot ↗
               </button>
             </div>
 
-            <div className="bg-[var(--color-parchment)] p-8 rounded-3xl border-2 border-[var(--color-terracotta-seal)] flex flex-col justify-between gap-6 shadow-md">
+            <div className="bg-[var(--color-parchment)] p-8 rounded-3xl border-2 border-[var(--color-dusty-pink)] flex flex-col justify-between gap-6 shadow-md">
               <div>
-                <span className="announcement-pill text-white bg-[var(--color-terracotta-seal)]">
+                <span className="announcement-pill text-white bg-[var(--color-dusty-pink)]">
                   POPULAR • EVENING CALM
                 </span>
-                <h3 className="text-xl font-normal mt-4 mb-2">Thursday, Nov 26, 2026</h3>
+                <h3 className="text-xl font-normal mt-4 mb-2">Wednesday, 6 January 2027</h3>
                 <p className="text-xs text-[var(--color-graphite)] font-mono">19:00 – 20:00 GMT (ONLINE)</p>
               </div>
               <button
                 type="button"
                 className="btn-primary-terracotta btn-pill-sm w-full justify-center"
-                onClick={() => openWithSlot("Thursday, Nov 26 • 19:00 – 20:00 GMT")}
+                onClick={() => openWithSlot("Wednesday, 6 January 2027 • 19:00–20:00 GMT")}
               >
                 Book this slot ↗
               </button>
@@ -182,13 +182,13 @@ export default function WorkshopPage() {
                 <span className="announcement-pill text-ink bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)]">
                   SUNDAY RESET
                 </span>
-                <h3 className="text-xl font-normal mt-4 mb-2">Sunday, Dec 6, 2026</h3>
+                <h3 className="text-xl font-normal mt-4 mb-2">Sunday, 17 January 2027</h3>
                 <p className="text-xs text-[var(--color-graphite)] font-mono">16:00 – 17:00 GMT (ONLINE)</p>
               </div>
               <button
                 type="button"
                 className="btn-primary-terracotta btn-pill-sm w-full justify-center"
-                onClick={() => openWithSlot("Sunday, Dec 6 • 16:00 – 17:00 GMT")}
+                onClick={() => openWithSlot("Sunday, 17 January 2027 • 16:00–17:00 GMT")}
               >
                 Book this slot ↗
               </button>

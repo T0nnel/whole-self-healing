@@ -208,25 +208,25 @@ export default function InteractiveBotanical({
           >
             <path
               d="M 80 12 C 73 5, 76 0, 80 -4 C 84 0, 87 5, 80 12 Z"
-              fill="#b87557"
-              stroke="#b87557"
+              fill="#c27d7f"
+              stroke="#c27d7f"
               strokeWidth="1"
             />
           </g>
 
-          {/* Small Terracotta Seed Pods at nodes */}
+          {/* Small Dusty Pink Seed Pods at nodes */}
           <circle
             cx="78"
             cy="115"
             r={isHovered || bloomed ? 3.5 : 2.5}
-            fill="#b87557"
+            fill="#c27d7f"
             className="transition-all duration-500"
           />
           <circle
             cx="81"
             cy="85"
             r={isHovered || bloomed ? 3.5 : 2.5}
-            fill="#b87557"
+            fill="#c27d7f"
             className="transition-all duration-500"
           />
           <circle

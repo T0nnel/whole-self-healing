@@ -9,9 +9,9 @@ interface WorkshopModalProps {
 }
 
 const upcomingDates = [
-  { id: "slot-1", label: "Saturday, Nov 14 • 10:00 – 11:00 GMT", status: "Open" },
-  { id: "slot-2", label: "Thursday, Nov 26 • 19:00 – 20:00 GMT", status: "Filling Fast" },
-  { id: "slot-3", label: "Sunday, Dec 6 • 16:00 – 17:00 GMT", status: "Open" },
+  { id: "slot-1", label: "Saturday, 12 December 2026 • 10:00–11:00 GMT", status: "Open" },
+  { id: "slot-2", label: "Wednesday, 6 January 2027 • 19:00–20:00 GMT", status: "Filling Fast" },
+  { id: "slot-3", label: "Sunday, 17 January 2027 • 16:00–17:00 GMT", status: "Open" },
 ];
 
 export default function WorkshopModal({ isOpen, onClose, preselectedDate }: WorkshopModalProps) {

@@ -32,7 +32,7 @@ const BRAND_PALETTE = {
   sageDeep: "rgba(101, 118, 93, ",       // #65765d
   sageSoft: "rgba(142, 163, 133, ",      // vibrant botanical green
   sageLight: "rgba(195, 212, 188, ",     // soft herbal leaf
-  terracotta: "rgba(184, 117, 87, ",    // warm clay accent
+  dustyPink: "rgba(194, 125, 127, ",     // gentle dusty pink botanical accent
   goldPollen: "rgba(196, 163, 118, ",    // golden pollen
   taupe: "rgba(209, 201, 191, ",         // warm paper taupe
 };
@@ -129,15 +129,15 @@ export default function ParticleCanvas({
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Set to 50 leaves/particles on desktop with proportional mobile scaling
-    const particleCount = width < 640 ? 25 : width < 1024 ? 38 : 50;
+    // Significantly reduced particle count for a minimal, non-distracting ambiance (client feedback)
+    const particleCount = width < 640 ? 5 : width < 1024 ? 8 : 12;
 
     const particles: Particle[] = [];
     const colorKeys: (keyof typeof BRAND_PALETTE)[] = [
       "sageDeep",
       "sageSoft",
       "sageLight",
-      "terracotta",
+      "dustyPink",
       "goldPollen",
       "taupe",
     ];
@@ -145,7 +145,7 @@ export default function ParticleCanvas({
     const createParticle = (spawnRandomY = true, customX?: number, customY?: number): Particle => {
       const rand = Math.random();
       const pType: Particle["type"] =
-        rand < 0.50 ? "leaf" : rand < 0.72 ? "petal" : rand < 0.88 ? "seed" : "mote";
+        rand < 0.40 ? "leaf" : rand < 0.65 ? "petal" : rand < 0.85 ? "seed" : "mote";
 
       const chosenColor = BRAND_PALETTE[colorKeys[Math.floor(Math.random() * colorKeys.length)]];
 
@@ -153,19 +153,20 @@ export default function ParticleCanvas({
       let opacity: number;
       let veinDetail = false;
 
+      // Subtle, translucent, slow motion
       if (pType === "leaf") {
-        size = Math.random() * 6.5 + 4.5;
-        opacity = Math.random() * 0.45 + 0.25;
-        veinDetail = size > 6.0;
-      } else if (pType === "petal") {
         size = Math.random() * 5.0 + 3.5;
-        opacity = Math.random() * 0.40 + 0.22;
+        opacity = Math.random() * 0.20 + 0.12;
+        veinDetail = size > 5.5;
+      } else if (pType === "petal") {
+        size = Math.random() * 4.0 + 2.5;
+        opacity = Math.random() * 0.18 + 0.10;
       } else if (pType === "seed") {
-        size = Math.random() * 3.5 + 2.0;
-        opacity = Math.random() * 0.35 + 0.20;
+        size = Math.random() * 2.5 + 1.5;
+        opacity = Math.random() * 0.18 + 0.10;
       } else {
-        size = Math.random() * 2.2 + 1.0;
-        opacity = Math.random() * 0.50 + 0.20;
+        size = Math.random() * 1.8 + 0.8;
+        opacity = Math.random() * 0.25 + 0.10;
       }
 
       // Initial placement:
@@ -179,15 +180,15 @@ export default function ParticleCanvas({
       return {
         x: posX,
         y: posY,
-        vx: (Math.random() - 0.5) * 0.65,
-        vy: -Math.random() * 0.55 - 0.25,
+        vx: (Math.random() - 0.5) * 0.2, // very slow, calm drift
+        vy: -Math.random() * 0.2 - 0.08,  // gentle upward float
         size,
         opacity,
         baseOpacity: opacity,
         rotation: Math.random() * Math.PI * 2,
-        vRot: (Math.random() - 0.5) * 0.025,
+        vRot: (Math.random() - 0.5) * 0.008,
         flutterPhase: Math.random() * Math.PI * 2,
-        flutterSpeed: Math.random() * 0.035 + 0.015,
+        flutterSpeed: Math.random() * 0.015 + 0.005,
         color: chosenColor,
         type: pType,
         aspectRatio: pType === "leaf" ? 2.5 : pType === "petal" ? 1.7 : 2.0,
@@ -215,27 +216,8 @@ export default function ParticleCanvas({
       const activeSection = sectionRef.current;
       const scrollV = scrollVelocityRef.current;
 
-      // Detect section transition on home page
+      // Detect section transition on home page - gentle, no sudden bursts
       if (activeSection !== lastSection) {
-        if (activeSection === "approach") {
-          // Home approach section: leaves sweep in diagonally from left
-          for (let k = 0; k < 8; k++) {
-            const p = particles[k % particles.length];
-            p.x = -20 - Math.random() * 80;
-            p.y = Math.random() * height;
-            p.vx = Math.random() * 2.5 + 1.2; // sweep to right
-            p.vy = -Math.random() * 0.6;
-          }
-        } else if (activeSection === "workshop") {
-          // Home workshop section: burst from the right side
-          for (let k = 0; k < 8; k++) {
-            const p = particles[(k + 8) % particles.length];
-            p.x = width + 20 + Math.random() * 80;
-            p.y = Math.random() * height;
-            p.vx = -(Math.random() * 2.5 + 1.2); // sweep to left
-            p.vy = -Math.random() * 0.6;
-          }
-        }
         lastSection = activeSection;
       }
 
@@ -244,50 +226,13 @@ export default function ParticleCanvas({
 
         p.flutterPhase += p.flutterSpeed;
 
-        // Base atmospheric breeze
-        let breezeX = Math.sin(animationTime * 1.2 + p.y * 0.006) * 0.45;
-        let breezeY = Math.cos(animationTime * 0.9 + p.x * 0.005) * 0.15;
+        // Base atmospheric breeze - very gentle, calm drift
+        let breezeX = Math.sin(animationTime * 0.6 + p.y * 0.004) * 0.15;
+        let breezeY = Math.cos(animationTime * 0.5 + p.x * 0.003) * 0.08;
 
-        // =========================================================================
-        // DISTINCT ANIMATION ON SCROLL BY PAGE:
-        // =========================================================================
-        if (activePage === "home") {
-          // HOME: Left and right alternate cross-winds on scroll
-          // Half of the leaves sweep in from left, half sweep from right
-          if (scrollV !== 0) {
-            const isLeftGroup = i % 2 === 0;
-            const scrollInfluence = Math.abs(scrollV) * 0.18;
-            breezeX += isLeftGroup ? scrollInfluence : -scrollInfluence;
-            breezeY += scrollV * 0.05;
-          }
-        } else if (activePage === "about") {
-          // ABOUT: Leaves glide diagonally in from the LEFT with gentle upward lift
-          if (scrollV !== 0) {
-            const scrollInfluence = Math.abs(scrollV) * 0.22;
-            breezeX += scrollInfluence; // consistently coming across from left
-            breezeY -= Math.abs(scrollV) * 0.12; // upward lifting spiral
-          }
-        } else if (activePage === "approach") {
-          // APPROACH: Leaves drift in from the RIGHT toward the center like returning home
-          if (scrollV !== 0) {
-            const scrollInfluence = Math.abs(scrollV) * 0.22;
-            breezeX -= scrollInfluence; // sweeps in from the right edge
-            breezeY += Math.sin(animationTime * 2 + i) * 0.3; // undulating wave
-          }
-        } else if (activePage === "workshop") {
-          // WORKSHOP: Dynamic radial gathering / dispersing swirl
-          if (scrollV !== 0) {
-            const centerX = width / 2;
-            const dir = p.x < centerX ? 1 : -1;
-            breezeX += dir * Math.abs(scrollV) * 0.16; // converge toward center
-            breezeY -= Math.abs(scrollV) * 0.08;
-          }
-        } else if (activePage === "coaching") {
-          // COACHING: Deep slow serene cascade with slight rightward drift
-          if (scrollV !== 0) {
-            breezeX += Math.abs(scrollV) * 0.09;
-            breezeY += scrollV * 0.12;
-          }
+        // Subtle scroll influence, avoiding sudden surges
+        if (scrollV !== 0) {
+          breezeY += Math.sign(scrollV) * Math.min(Math.abs(scrollV) * 0.02, 0.15);
         }
 
         // 3D tilt flutter scale
@@ -396,7 +341,7 @@ export default function ParticleCanvas({
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-10 h-full w-full opacity-85"
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-60"
       aria-hidden="true"
     />
   );

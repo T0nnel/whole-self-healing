@@ -66,7 +66,7 @@ export default function CoachingPage() {
             One-to-One <em>Coaching</em>
           </h1>
           <p className="text-lg text-[var(--color-charcoal)] leading-relaxed max-w-2xl mb-8">
-            A deeply personalized, confidential container for women who are ready to stop pushing through at their own expense, unlearn the instinct to over-function, and build sustainable harmony from within.
+            A deeply personalized, confidential container for anyone ready to stop pushing through at their own expense, unlearn the instinct to over-function, and build sustainable harmony from within.
           </p>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function CoachingPage() {
                 Looking for more <em>individual support?</em>
               </h2>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mt-4 mb-4">
-                I'm developing one-to-one coaching to help women explore the patterns that keep them under pressure and create a more balanced, fulfilling way of living.
+                I'm developing one-to-one coaching to help people explore the patterns that keep them under pressure and create a more balanced, fulfilling way of living.
               </p>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mb-6">
                 If this sounds like something you would be interested in, register your interest below.

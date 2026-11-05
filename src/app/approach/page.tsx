@@ -16,10 +16,10 @@ export default function ApproachPage() {
         <div className="main-wrapper">
           <span className="eyebrow-mono">OUR FOUNDATIONAL ETHOS</span>
           <h1 className="text-5xl font-normal leading-tight mt-2 mb-4">
-            You Deserve <em>Gentleness, Too</em>
+            Give Yourself Permission to <em>Slow Down</em>
           </h1>
           <p className="text-lg text-[var(--color-charcoal)] leading-relaxed max-w-2xl mb-8">
-            Healing isn't about fixing something broken. It's about dismantling the invisible expectations that taught you your worth was conditional on continuous sacrifice.
+            You don't have to keep pushing, put everyone else first or feel guilty for taking time for yourself. It's time to step away from the pressure of always doing more, reconnect with what you need and create space for a more balanced and fulfilling life.
           </p>
         </div>
       </section>
@@ -33,7 +33,7 @@ export default function ApproachPage() {
               Rest isn't something you have to <em>earn.</em>
             </h2>
             <p className="text-base text-[var(--color-charcoal)] leading-relaxed mt-4">
-              In a world that glorifies chronic overwork and emotional endurance, pausing can feel terrifying. Many women find that the moment they sit down to relax, a wave of restless anxiety and self-reproach arises.
+              In a world that glorifies chronic overwork and emotional endurance, pausing can feel terrifying. Many people find that the moment they sit down to relax, a wave of restless anxiety and self-reproach arises.
             </p>
             <p className="text-base text-[var(--color-charcoal)] leading-relaxed mt-4">
               Combining evidence-based psychological approaches with a holistic focus on wellbeing,

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -16,18 +17,24 @@ export default function Footer() {
           {/* Left Column: Brand & Practitioner */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="brand-seal-icon" aria-hidden="true">
-                ✳
+              <div className="relative w-8 h-8 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] flex items-center justify-center shrink-0">
+                <Image
+                  src="/logo.jpg"
+                  alt="Whole Self Healing logo"
+                  width={32}
+                  height={32}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <span className="brand-text text-xl">
                 Whole Self Healing
               </span>
             </div>
             <p className="text-sm text-[var(--color-charcoal)] leading-relaxed max-w-sm mb-4">
-              Evidence-based psychological care and trauma-informed somatics for women ready to slow down without guilt.
+              Evidence-based psychological care, mindfulness, and trauma-informed somatics supporting 200+ people on their journey towards greater wellbeing and balance.
             </p>
             <p className="text-xs text-[var(--color-graphite)] font-mono">
-              Bibi Beck • BSc (Hons), MSc, Qualified PWP
+              Bibi Beck • BSc (Hons), MSc Clinical Psychology, PgDip Qualified PWP, Mindfulness Practitioner
             </p>
           </div>
 

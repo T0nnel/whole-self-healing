@@ -121,8 +121,8 @@ export default function Home() {
               </p>
 
               <p className="hero-journal-subtitle hero-stagger-3">
-                A space for women who feel they should always be doing more,
-                struggle to rest without guilt, and are ready to find a gentler
+                A space for anyone who feels they should always be doing more,
+                struggles to rest without guilt, and is ready to find a gentler
                 way of living.
               </p>
 
@@ -143,7 +143,7 @@ export default function Home() {
               <div className="hero-stat-row">
                 <div className="stat-item">
                   <span className="stat-metric">200+</span>
-                  <span className="stat-caption">women supported so far</span>
+                  <span className="stat-caption">people supported so far</span>
                 </div>
                 <div className="stat-divider" aria-hidden="true" />
                 <div className="stat-item">
@@ -177,7 +177,7 @@ export default function Home() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-[var(--color-warm-taupe)] flex justify-between items-center text-xs text-[var(--color-graphite)] font-mono">
                   <span>WHOLE SELF HEALING</span>
-                  <span>BIBI BECK, MSc, PWP</span>
+                  <span>BIBI BECK, MSc, PGDIP PWP</span>
                 </div>
               </div>
             </div>
@@ -279,13 +279,19 @@ export default function Home() {
               "We shouldn't have to reach breaking point before we give ourselves permission to slow down, prioritise our wellbeing, and make changes that help us feel more like ourselves."
             </p>
             <div className="quote-author-row">
-              <div className="quote-avatar-circle" aria-hidden="true">
-                BB
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-dusty-pink)] shrink-0 shadow-sm">
+                <Image
+                  src="/bibi-beck.jpg"
+                  alt="Bibi Beck, MSc Clinical Psychology"
+                  width={56}
+                  height={56}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div>
                 <p className="author-name">Bibi Beck</p>
                 <p className="author-credentials">
-                  Psychological Wellbeing Practitioner, MSc Clinical Forensic Psychology, yoga teacher
+                  Psychological Wellbeing Practitioner (PgDip), MSc Clinical Psychology, Mindfulness Practitioner &amp; Yoga Teacher
                 </p>
               </div>
             </div>
@@ -302,20 +308,43 @@ export default function Home() {
                   BSc (Hons) Psychology
                 </span>
                 <span className="announcement-pill text-ink bg-[var(--color-parchment)] border border-[var(--color-warm-taupe)]">
-                  MSc Clinical Forensic
+                  MSc Clinical Psychology
                 </span>
                 <span className="announcement-pill text-ink bg-[var(--color-parchment)] border border-[var(--color-warm-taupe)]">
-                  Qualified PWP
+                  PgDip Qualified PWP
+                </span>
+                <span className="announcement-pill text-ink bg-[var(--color-parchment)] border border-[var(--color-warm-taupe)]">
+                  Mindfulness Practitioner
+                </span>
+                <span className="announcement-pill text-ink bg-[var(--color-parchment)] border border-[var(--color-warm-taupe)]">
+                  Yoga Teacher
                 </span>
                 <span className="announcement-pill text-ink bg-[var(--color-parchment)] border border-[var(--color-warm-taupe)]">
                   NLP Practitioner
                 </span>
               </div>
+
+              {/* Bibi Profile Photo Card */}
+              <div className="mt-8 rounded-2xl overflow-hidden border border-[var(--color-warm-taupe)] shadow-sm bg-[var(--color-parchment)] max-w-sm">
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src="/bibi-beck.jpg"
+                    alt="Bibi Beck"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 380px"
+                  />
+                </div>
+                <div className="p-4 border-t border-[var(--color-warm-taupe)] text-xs text-[var(--color-graphite)] font-mono flex justify-between items-center">
+                  <span>BIBI BECK</span>
+                  <span>MSc CLINICAL PSYCHOLOGY</span>
+                </div>
+              </div>
             </div>
 
             <div className="text-base text-[var(--color-charcoal)] leading-relaxed flex flex-col gap-4">
               <p>
-                My approach brings together psychological knowledge, years of professional experience in mental health care, and a holistic understanding of wellbeing. I hold a Bachelor's degree in Psychology and a Master's degree in Clinical Forensic Psychology. I am also a qualified Psychological Wellbeing Practitioner and yoga teacher, with additional training in Neuro-Linguistic Programming (NLP), mental health coaching, and life coaching.
+                My approach brings together psychological knowledge, years of professional experience in mental health care, and a holistic understanding of wellbeing. I hold a Bachelor's degree in Psychology and a Master's degree in Clinical Psychology. I am also a qualified Psychological Wellbeing Practitioner (postgraduate diploma), mindfulness practitioner, and yoga teacher, with additional training in Neuro-Linguistic Programming (NLP), mental health coaching, and life coaching.
               </p>
               <p>
                 Alongside my professional background, my own lived experience has shaped the way I understand wellbeing. My experiences of trauma led me to ways of coping that involved disconnecting from difficult emotions and pushing through, at the expense of my true needs. When I later developed a debilitating health condition, I was forced to slow down and examine my relationship with myself, my identity, and the way I wanted to live.
@@ -324,7 +353,7 @@ export default function Home() {
                 This journey taught me the importance of listening to our bodies, recognising and honouring our limits, and challenging the pressure to keep going at all costs. It also showed me how isolating it can feel to navigate life's challenges alone, and how valuable it is to feel understood, supported, and connected to others.
               </p>
               <p>
-                These experiences inspired me to create Whole Self Healing, a space where I can share the lessons I've learned and support other women in finding a more compassionate way of living. I believe we shouldn't have to reach breaking point before we give ourselves permission to slow down, prioritise our wellbeing, and make changes that help us feel more like ourselves.
+                These experiences inspired me to create Whole Self Healing, a space where I can share the lessons I've learned and support people in finding a more compassionate way of living. I believe we shouldn't have to reach breaking point before we give ourselves permission to slow down, prioritise our wellbeing, and make changes that help us feel more like ourselves.
               </p>
               <div className="pt-2">
                 <Link href="/about" className="btn-secondary-outlined btn-pill-sm">
@@ -407,7 +436,7 @@ export default function Home() {
                 Looking for more individual support?
               </h2>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mt-4 mb-4">
-                I'm developing one-to-one coaching to help women explore the patterns that keep them under pressure and create a more balanced, fulfilling way of living.
+                I'm developing one-to-one coaching to help people explore the patterns that keep them under pressure and create a more balanced, fulfilling way of living.
               </p>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mb-6">
                 If this sounds like something you would be interested in, register your interest below to be notified as private openings become available.
