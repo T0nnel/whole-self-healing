@@ -126,7 +126,15 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
             >
               <div className="mobile-drawer-header">
                 <div className="nav-brand-group">
-                  <div className="brand-seal-icon">✳</div>
+                  <div className="relative w-7 h-7 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] flex items-center justify-center shrink-0">
+                    <Image
+                      src="/logo.jpg"
+                      alt="Whole Self Healing logo"
+                      width={28}
+                      height={28}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                   <div className="brand-text">
                     Whole Self Healing
                   </div>
