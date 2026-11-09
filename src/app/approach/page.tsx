@@ -2,13 +2,11 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ParticleCanvas from "@/components/ParticleCanvas";
 import Link from "next/link";
 
 export default function ApproachPage() {
   return (
     <main className="overflow-hidden relative">
-      <ParticleCanvas page="approach" />
       <Header />
 
       {/* Hero */}

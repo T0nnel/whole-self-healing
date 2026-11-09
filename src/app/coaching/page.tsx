@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ParticleCanvas from "@/components/ParticleCanvas";
 import Link from "next/link";
 
 export default function CoachingPage() {
@@ -55,7 +54,6 @@ export default function CoachingPage() {
 
   return (
     <main className="overflow-hidden relative">
-      <ParticleCanvas page="coaching" />
       <Header />
 
       {/* Hero */}
