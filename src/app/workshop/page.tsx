@@ -92,9 +92,9 @@ export default function WorkshopPage() {
                 <span className="text-xs font-mono font-semibold text-[var(--color-dusty-pink)] block mb-1">
                   PART 01 • 15 MINS
                 </span>
-                <h4 className="text-xl font-normal text-ink mb-2">Unmasking the Inner Critic</h4>
+                <h4 className="text-xl font-normal text-ink mb-2">Nervous System Healing</h4>
                 <p className="text-sm text-[var(--color-charcoal)] leading-relaxed m-0">
-                  Recognise the high-functioning anxiety patterns that push you beyond natural capacity.
+                  Evidence-based grounding techniques and somatic awareness drawn from clinical psychology to signal safety to your body and settle the nervous system.
                 </p>
               </div>
 
@@ -102,9 +102,9 @@ export default function WorkshopPage() {
                 <span className="text-xs font-mono font-semibold text-[var(--color-dusty-pink)] block mb-1">
                   PART 02 • 10 MINS
                 </span>
-                <h4 className="text-xl font-normal text-ink mb-2">Somatic Nervous System Soothing</h4>
+                <h4 className="text-xl font-normal text-ink mb-2">Unmasking the Inner Critic</h4>
                 <p className="text-sm text-[var(--color-charcoal)] leading-relaxed m-0">
-                  Evidence-based grounding techniques drawn from clinical psychology and trauma-informed somatics to signal safety to your body.
+                  Recognise the high-functioning anxiety patterns and internalized pressures that push you beyond natural capacity.
                 </p>
               </div>
 

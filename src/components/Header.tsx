@@ -41,7 +41,7 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
           <Link href="/" className="nav-brand-group" onClick={closeMenu} aria-label="Whole Self Healing home">
             <div className="relative w-8 h-8 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] flex items-center justify-center shrink-0">
               <Image
-                src="/logo.jpg"
+                src="/logo-circle.png"
                 alt="Whole Self Healing logo motif"
                 width={32}
                 height={32}
@@ -128,7 +128,7 @@ export default function Header({ onBookClick }: { onBookClick?: () => void }) {
                 <div className="nav-brand-group">
                   <div className="relative w-7 h-7 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] flex items-center justify-center shrink-0">
                     <Image
-                      src="/logo.jpg"
+                      src="/logo-circle.png"
                       alt="Whole Self Healing logo"
                       width={28}
                       height={28}

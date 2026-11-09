@@ -123,7 +123,7 @@ export default function CoachingPage() {
                 I'm developing one-to-one coaching to help people explore the patterns that keep them under pressure and create a more balanced, fulfilling way of living.
               </p>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mb-6">
-                If this sounds like something you would be interested in, register your interest below.
+                If this sounds like something you would be interested in, register your interest and book a discovery call below.
               </p>
               <Link href="/workshop" className="btn-secondary-outlined btn-pill-sm">
                 Prefer to start with a group workshop first? →
@@ -135,7 +135,7 @@ export default function CoachingPage() {
                 <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
                   <div>
                     <span className="eyebrow-mono">INTAKE REGISTRATION</span>
-                    <h3 className="text-2xl font-normal mt-1">Register your interest</h3>
+                    <h3 className="text-2xl font-normal mt-1">Register your interest &amp; book a discovery call</h3>
                     <p className="text-xs text-[var(--color-graphite)] mt-1">
                       Stay in touch as private intake openings unlock.
                     </p>
@@ -216,7 +216,7 @@ export default function CoachingPage() {
                       disabled={isSubmitting}
                       className="btn-primary-terracotta w-full justify-center"
                     >
-                      {isSubmitting ? "Submitting..." : "Register interest →"}
+                      {isSubmitting ? "Submitting..." : "Register your interest & book a discovery call →"}
                     </button>
                   </div>
                 </form>

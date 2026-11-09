@@ -78,7 +78,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-[var(--color-charcoal)] italic font-serif mb-4 hero-stagger-2">
-                "When did resting start to feel like something you had to earn?"
+                "We shouldn't have to reach breaking point before giving ourselves permission to slow down and prioritise our wellbeing."
               </p>
 
               <p className="hero-journal-subtitle hero-stagger-3">
@@ -145,17 +145,31 @@ export default function Home() {
         className="py-12 md:py-20 bg-[var(--color-parchment)] relative z-10"
       >
         <div className="main-wrapper">
-          <div className="max-w-2xl mb-6">
-            <p className="text-sm text-[var(--color-graphite)] mb-4">How it works</p>
-            <h2 className="text-4xl font-normal leading-tight">
-              Rest isn't something you have to earn.
-            </h2>
-            <p className="text-base text-[var(--color-charcoal)] leading-relaxed mt-4">
-              Combining evidence-based psychological approaches with a holistic focus on wellbeing,
-              Whole Self Healing offers coaching and workshops to help you understand the patterns
-              that keep you under pressure, learn to rest without guilt, develop a kinder relationship
-              with yourself, and create a more balanced and fulfilling way of living.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
+            <div className="max-w-2xl">
+              <p className="text-sm text-[var(--color-graphite)] mb-4">How it works</p>
+              <h2 className="text-4xl font-normal leading-tight">
+                Rest isn't something you have to earn.
+              </h2>
+              <p className="text-base text-[var(--color-charcoal)] leading-relaxed mt-4">
+                Combining evidence-based psychological approaches with a holistic focus on wellbeing,
+                Whole Self Healing offers coaching and workshops to help you understand the patterns
+                that keep you under pressure, learn to rest without guilt, develop a kinder relationship
+                with yourself, and create a more balanced and fulfilling way of living.
+              </p>
+            </div>
+            {/* Logo in a circle placed to the far right of the heading without words */}
+            <div className="hidden md:flex flex-col items-center justify-center shrink-0 pt-2">
+              <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] shadow-sm flex items-center justify-center p-2">
+                <Image
+                  src="/logo-circle.png"
+                  alt="Whole Self Healing emblem"
+                  width={112}
+                  height={112}
+                  className="object-cover w-full h-full rounded-full"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Scroll-Responsive Botanical Progress Track across the 3 principles */}
@@ -213,7 +227,7 @@ export default function Home() {
         <div className="main-wrapper">
           <div className="practitioner-quote-card">
             <p className="quote-serif">
-              "We shouldn't have to reach breaking point before we give ourselves permission to slow down, prioritise our wellbeing, and make changes that help us feel more like ourselves."
+              "We shouldn't have to reach breaking point before giving ourselves permission to slow down and prioritise our wellbeing."
             </p>
             <div className="quote-author-row">
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-dusty-pink)] shrink-0 shadow-sm">
@@ -290,7 +304,7 @@ export default function Home() {
                 This journey taught me the importance of listening to our bodies, recognising and honouring our limits, and challenging the pressure to keep going at all costs. It also showed me how isolating it can feel to navigate life's challenges alone, and how valuable it is to feel understood, supported, and connected to others.
               </p>
               <p>
-                These experiences inspired me to create Whole Self Healing, a space where I can share the lessons I've learned and support people in finding a more compassionate way of living. I believe we shouldn't have to reach breaking point before we give ourselves permission to slow down, prioritise our wellbeing, and make changes that help us feel more like ourselves.
+                These experiences inspired me to create Whole Self Healing, a space where I can share the lessons I've learned and support people in finding a more compassionate way of living. I believe we shouldn't have to reach breaking point before giving ourselves permission to slow down and prioritise our wellbeing.
               </p>
               <div className="pt-2">
                 <Link href="/about" className="btn-secondary-outlined btn-pill-sm">
@@ -376,7 +390,7 @@ export default function Home() {
                 I'm developing one-to-one coaching to help people explore the patterns that keep them under pressure and create a more balanced, fulfilling way of living.
               </p>
               <p className="text-base text-[var(--color-charcoal)] leading-relaxed mb-6">
-                If this sounds like something you would be interested in, register your interest below to be notified as private openings become available.
+                If this sounds like something you would be interested in, register your interest and book a discovery call below to be notified as private openings become available.
               </p>
               <Link href="/coaching" className="btn-secondary-outlined btn-pill-sm">
                 Learn about 1:1 coaching
@@ -388,7 +402,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div>
                     <p className="text-xs text-[var(--color-graphite)] uppercase tracking-wider">Confidential enquiry</p>
-                    <h3 className="text-2xl font-normal mt-1">Register your interest</h3>
+                    <h3 className="text-2xl font-normal mt-1">Register your interest &amp; book a discovery call</h3>
                     <p className="text-xs text-[var(--color-graphite)] mt-1">
                       Stay in touch as private coaching openings become available.
                     </p>
@@ -452,7 +466,7 @@ export default function Home() {
                       disabled={isSubmitting}
                       className="btn-primary-terracotta w-full justify-center"
                     >
-                      {isSubmitting ? "Submitting..." : "Register interest →"}
+                      {isSubmitting ? "Submitting..." : "Register your interest & book a discovery call →"}
                     </button>
                   </div>
                 </form>

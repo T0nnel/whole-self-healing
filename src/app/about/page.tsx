@@ -28,7 +28,7 @@ export default function AboutPage() {
         <div className="main-wrapper">
           <div className="practitioner-quote-card bg-[var(--color-parchment)] mb-16">
             <p className="quote-serif">
-              "Rest isn't something you earn after surviving exhaustion. It is the fundamental condition from which meaningful living begins."
+              "We shouldn't have to reach breaking point before giving ourselves permission to slow down and prioritise our wellbeing."
             </p>
             <div className="quote-author-row">
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-dusty-pink)] shrink-0 shadow-sm">
@@ -96,8 +96,8 @@ export default function AboutPage() {
                   <span className="text-xs font-mono text-[var(--color-dusty-pink)]">SOMATIC</span>
                 </div>
                 <div className="bg-[var(--color-parchment)] p-4 rounded-xl border border-[var(--color-warm-taupe)] flex items-center justify-between">
-                  <span className="text-sm font-semibold text-ink">Neuro-Linguistic Programming &amp; Life Coach</span>
-                  <span className="text-xs font-mono text-[var(--color-dusty-pink)]">CERTIFIED</span>
+                  <span className="text-sm font-semibold text-ink">Certified Training in NLP &amp; Life Coaching</span>
+                  <span className="text-xs font-mono text-[var(--color-dusty-pink)]">CERTIFICATE</span>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 This journey taught me the importance of listening to our bodies, recognising and honouring our limits, and challenging the pressure to keep going at all costs. It also showed me how isolating it can feel to navigate life's challenges alone, and how valuable it is to feel understood, supported, and connected to others.
               </p>
               <p>
-                These experiences inspired me to create Whole Self Healing, a space where I can share the lessons I've learned and support people in finding a more compassionate way of living. I believe we shouldn't have to reach breaking point before we give ourselves permission to slow down, prioritise our wellbeing, and make changes that help us feel more like ourselves.
+                These experiences inspired me to create Whole Self Healing, a space where I can share the lessons I've learned and support people in finding a more compassionate way of living. I believe we shouldn't have to reach breaking point before giving ourselves permission to slow down and prioritise our wellbeing.
               </p>
               <div className="pt-4 flex flex-wrap gap-4 items-center">
                 <Link href="/workshop" className="btn-primary-terracotta">

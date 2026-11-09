@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-8 h-8 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] flex items-center justify-center shrink-0">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo-circle.png"
                   alt="Whole Self Healing logo"
                   width={32}
                   height={32}
