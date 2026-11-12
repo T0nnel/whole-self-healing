@@ -145,8 +145,8 @@ export default function Home() {
         className="py-12 md:py-20 bg-[var(--color-parchment)] relative z-10"
       >
         <div className="main-wrapper">
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
-            <div className="max-w-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center mb-6">
+            <div className="md:col-span-8 lg:col-span-8">
               <p className="text-sm text-[var(--color-graphite)] mb-4">How it works</p>
               <h2 className="text-4xl font-normal leading-tight">
                 Rest isn't something you have to earn.
@@ -158,14 +158,14 @@ export default function Home() {
                 with yourself, and create a more balanced and fulfilling way of living.
               </p>
             </div>
-            {/* Logo in a circle placed to the far right of the heading without words */}
-            <div className="hidden md:flex flex-col items-center justify-center shrink-0 pt-2">
-              <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] shadow-sm flex items-center justify-center p-2">
+            {/* Logo in a circle: centered nicely on mobile below the text, and centered in column 3 (above Card 3) on desktop */}
+            <div className="flex md:col-span-4 lg:col-span-4 items-center justify-center my-4 md:my-0">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden bg-[var(--color-aged-paper)] border border-[var(--color-warm-taupe)] shadow-sm flex items-center justify-center p-2">
                 <Image
                   src="/logo-circle.png"
                   alt="Whole Self Healing emblem"
-                  width={112}
-                  height={112}
+                  width={128}
+                  height={128}
                   className="object-cover w-full h-full rounded-full"
                 />
               </div>
