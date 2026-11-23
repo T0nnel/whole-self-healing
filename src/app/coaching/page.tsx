@@ -188,6 +188,7 @@ export default function CoachingPage() {
                       <option value="Inner Critic & Perfectionism">Inner Critic &amp; Perfectionism</option>
                       <option value="Burnout Recovery & Chronic Fatigue">Burnout Recovery &amp; Chronic Fatigue</option>
                       <option value="Boundaries & People Pleasing">Boundaries &amp; People Pleasing</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
